@@ -23,6 +23,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 // Rutas
 app.use("/api/preguntas", preguntaRoutes);
 app.use("/api/respuestas", respuestaRoutes);
+app.use("/api/users", userRoutes); // Usar rutas de usuario
 
 // Ruta de ejemplo para la raíz
 app.get("/", async (req: Request, res: Response) => {
