@@ -5,8 +5,9 @@ import { Request, Response, NextFunction } from "express";
 import { AppDataSource } from "./data-source"; // Importar la fuente de datos
 import preguntaRoutes from "./routes/pregunta.routes";
 import respuestaRoutes from "./routes/respuesta.routes";
+import userRoutes from "./routes/user.routes"; // Importar rutas de usuario
 import * as oracledb from "oracledb";
-
+import { errorHandler } from "./middlewares/error.middleware"; // Importar el middleware de manejo de errores
 dotenv.config();
 
 const app = express();
@@ -57,6 +58,8 @@ app.get("/", async (req: Request, res: Response) => {
     }
   }
 });
+app.use(errorHandler);
+
 
 // Inicializar la conexión a la base de datos y arrancar el servidor
 AppDataSource.initialize()
