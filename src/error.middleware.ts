@@ -1,4 +1,6 @@
 import { Request, Response, NextFunction } from "express";
+import { console } from "node:console"; // Add missing import
+import process from "node:process"; // Add missing import
 
 // Middleware global para manejar errores
 export function errorHandler(err: Error, req: Request, res: Response, next: NextFunction) {

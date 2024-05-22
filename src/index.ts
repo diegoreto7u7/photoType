@@ -8,6 +8,7 @@ import respuestaRoutes from "./routes/respuesta.routes";
 import userRoutes from "./routes/user.routes"; // Importar rutas de usuario
 import * as oracledb from "oracledb";
 import { errorHandler } from "./middlewares/error.middleware"; // Importar el middleware de manejo de errores
+import { console } from "console";
 dotenv.config();
 
 const app = express();
@@ -58,6 +59,7 @@ app.get("/", async (req: Request, res: Response) => {
     }
   }
 });
+// Middleware global de manejo de errores
 app.use(errorHandler);
 
 
