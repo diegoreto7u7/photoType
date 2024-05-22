@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { getRepository } from "typeorm";
-import { Usuario } from "../entity/Usuario";
+import { Usuario } from "../entity/Usuario.entity";
 import { Encrypt } from '../helpers/helpers';
 
 class UserController {

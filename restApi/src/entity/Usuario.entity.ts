@@ -10,10 +10,10 @@ export class Usuario {
   username: string;
 
   @Column()
-  role: string;
+  admin: number;
 
   @Column()
-  contraseña: string;
+  contrasena: string;
 
   @OneToMany(() => Partida, partida => partida.usuario)
   partidas: Partida[];
